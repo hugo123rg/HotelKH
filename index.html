@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Bella Vista</title>
+  <link rel="stylesheet" href="diseño.css"> <!-- Enlaza el archivo CSS externo -->
+</head>
+<body>
+
+</head>
+<body>
+
+<header>
+  <img src="imagenes/R.png" alt="Logo del Hotel Bella Vista">
+  <h1>Hotel Bella Vista</h1>
+</header>
+
+<nav>
+  <a href="#" onclick="showSection('inicio')">Inicio</a>
+  <a href="#" onclick="showSection('habitaciones')">Habitaciones</a>
+  <a href="#" onclick="showSection('restaurante')">Restaurante</a>
+  <a href="#" onclick="showSection('bar')">Bar</a>
+  <a href="#" onclick="showSection('reserva')">Reserva</a>
+</nav>
+
+<article>
+  <section id="inicio" class="active" style="background-image: url('imagenes/hte.jpg'); background-size: cover; background-position: center;">
+    <div style="background-color: rgba(0, 0, 0, 0.5); padding: 50px;">
+      <h2>Tu Hogar Fuera De Casa</h2>
+      <p>Somos un hotel de lujo ubicado en el corazón de la ciudad. Ofrecemos una experiencia de alojamiento excepcional con magníficas vistas y servicios de clase mundial.</p>
+      <p>Ubicación: Av. Principal #123, Ciudad Bella</p>
+      <p>Teléfono: 123-456-789</p>
+      <p>Descubre nuestras habitaciones <a href="#" onclick="showSection('habitaciones')">aquí</a>.</p>
+      <hr>
+      <div class="flex-container">
+        <p style="margin-right: 20px;">El Hotel Bella Vista ha sido una parte integral de la comunidad desde 1950, brindando hospitalidad y confort a viajeros de todo el mundo.</p>
+        <img src="imagenes/origee.jpeg" alt="Orígenes del Hotel Bella Vista">
+      </div>
+    </div>
+  </section>
+
+<section id="habitaciones">
+  <h2>Nuestras Habitaciones</h2>
+    <div class="image-gallery slider" id="habitaciones-slider">
+      <div class="slides">
+        <div class="slide slide1"><img src="imagenes/habit1.png" alt="Habitación 1"></div>
+        <div class="slide slide2"><img src="imagenes/habit2.png" alt="Habitación 2"></div>
+        <div class="slide slide3"><img src="imagenes/habit3.png" alt="Habitación 3"></div>
+        <div class="slide slide4"><img src="imagenes/habit4.jpg" alt="Habitación 4"></div>
+        <div class="slide slide5"><img src="imagenes/habit5.jpg" alt="Habitación 5"></div>
+      </div>
+      <div class="navigation">
+        <label for="habitacion1" onclick="changeSlide('slide1', 'habitaciones-slider')"></label>
+        <label for="habitacion2" onclick="changeSlide('slide2', 'habitaciones-slider')"></label>
+        <label for="habitacion3" onclick="changeSlide('slide3', 'habitaciones-slider')"></label>
+        <label for="habitacion4" onclick="changeSlide('slide4', 'habitaciones-slider')"></label>
+        <label for="habitacion5" onclick="changeSlide('slide5', 'habitaciones-slider')"></label>
+      </div>
+    </div>
+</section>
+
+<section id="restaurante">
+  <h2>Nuestro Restaurante</h2>
+  <div class="image-gallery slider" id="restaurante-slider">
+    <div class="slides">
+      <div class="slide slide1"><img src="imagenes/res1.jpg" alt="Restaurante 1"></div>
+      <div class="slide slide2"><img src="imagenes/res2.avif" alt="Restaurante 2"></div>
+      <div class="slide slide3"><img src="imagenes/res3.jpg" alt="Restaurante 3"></div>
+    </div>
+    <div class="navigation">
+      <label for="restaurante1" onclick="changeSlide('slide1', 'restaurante-slider')"></label>
+      <label for="restaurante2" onclick="changeSlide('slide2', 'restaurante-slider')"></label>
+      <label for="restaurante3" onclick="changeSlide('slide3', 'restaurante-slider')"></label>
+    </div>
+  </div>
+  <div class="food-images">
+    <div class="image-container">
+      <img src="imagenes/c1.jpg" alt="Comida 1">
+      <div class="overlay">Guisos</div>
+    </div>
+    <div class="image-container">
+      <img src="imagenes/c2.jpg" alt="Comida 2">
+      <div class="overlay">Tacos</div>
+    </div>
+    <div class="image-container">
+      <img src="imagenes/c3.jpeg" alt="Comida 3">
+      <div class="overlay">Carne de la mejor calidad</div>
+    </div>
+</section>
+
+<section id="bar">
+  <h2>Nuestro Bar</h2>
+  <div class="image-gallery slider" id="bar-slider">
+    <div class="slides">
+      <div class="slide slide1"><img src="imagenes/bar1.jpg" alt="Bar 1"></div>
+      <div class="slide slide2"><img src="imagenes/bar2.jpg" alt="Bar 2"></div>
+      <div class="slide slide3"><img src="imagenes/bar3.jpg" alt="Bar 3"></div>
+    </div>
+    <div class="navigation">
+      <label for="bar1" onclick="changeSlide('slide1', 'bar-slider')"></label>
+      <label for="bar2" onclick="changeSlide('slide2', 'bar-slider')"></label>
+      <label for="bar3" onclick="changeSlide('slide3', 'bar-slider')"></label>
+    </div>
+  </div>
+  <div class="drink-images">
+    <div class="image-container">
+      <img src="imagenes/t1.jpeg" alt="Tragos 1">
+      <div class="overlay">Jugos</div>
+    </div>
+    <div class="image-container">
+      <img src="imagenes/t2.jpeg" alt="Tragos 2">
+      <div class="overlay">Tragos de todo tipo</div>
+    </div>
+    <div class="image-container">
+      <img src="imagenes/t3.jpeg" alt="Cerveza">
+      <div class="overlay">El mejor vino</div>
+    </div>
+</section>
+
+  <section id="reserva" class="reserva-container">
+    <div class="form">
+        <h2>Reserva tu Estadía</h2>
+        <form action="conexion.php" method="POST">
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono">
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico">
+            </div>
+            <div class="form-group">
+                <label for="habitaciones">Número de Habitaciones:</label>
+                <input type="number" id="habitaciones" name="habitaciones" min="1" value="1">
+            </div>
+            <div class="form-group">
+                <label for="nivel">Nivel de Habitación:</label>
+                <select id="nivel" name="nivel">
+                    <option value="normal">Normal</option>
+                    <option value="suite">Suite</option>
+                    <option value="suite_presidencial">Suite Presidencial</option>
+                </select>
+            </div>
+            <button type="submit">Reservar</button>
+        </form>
+    </div>
+    <div class="video-container">
+        <iframe width="315" height="530" src="https://www.youtube.com/embed/vPUPISrWMKU" title="Se viene video de La Casa De La Playa. El nuevo hotel de Xcaret" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</section>
+</article>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <p>&copy; 2024 Hotel Bella Vista. Todos los derechos reservados.
+los dueños kevin y Hugo les deseamos una estadia agradable a todos nuestros visitantes
+      </p>
+      <p>Síguenos en nuestras redes sociales:</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><img src="imagenes/facebook.png" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="imagenes/xx.png" alt="Twitter"></a>
+        <a href="https://instagram.com" target="_blank"><img src="imagenes/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387133.0218848304!2d-74.25987295410158!3d40.6976637526249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20EE.%20UU.!5e0!3m2!1ses!2sco!4v1645693948629!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showSection(sectionId) {
+  var sections = document.querySelectorAll('section');
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].classList.remove('active');
+  }
+  document.getElementById(sectionId).classList.add('active');
+}
+
+// Función para cambiar la diapositiva automáticamente
+function autoChangeSlide(sliderId) {
+  var slides = document.querySelectorAll('#' + sliderId + ' .slides .slide');
+  var labels = document.querySelectorAll('#' + sliderId + ' .navigation label');
+  var currentIndex = 0;
+
+  setInterval(function() {
+    // Oculta todas las diapositivas y desactiva todos los botones de navegación
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+      labels[i].style.backgroundColor = '#555';
+    }
+
+    // Muestra la siguiente diapositiva y activa el botón de navegación correspondiente
+    slides[currentIndex].style.display = 'block';
+    labels[currentIndex].style.backgroundColor = '#999';
+
+    // Incrementa el índice y vuelve al principio si se alcanza el final
+    currentIndex = (currentIndex + 1) % slides.length;
+  }, 3000); // Cambiar cada 3 segundos (3000 milisegundos)
+}
+window.onload = function() {
+  autoChangeSlide('habitaciones-slider');
+  autoChangeSlide('restaurante-slider');
+  autoChangeSlide('bar-slider');
+};
+
+</script>
+</body>
+</html>
